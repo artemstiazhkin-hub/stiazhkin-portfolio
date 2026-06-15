@@ -4,7 +4,7 @@
   "description": "Портфолио начинающего разработчика Михаила Стяжкина.",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#fffdf6",
   "theme_color": "#22d3ee",
   "icons": [
