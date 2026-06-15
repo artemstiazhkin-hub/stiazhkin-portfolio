@@ -1,0 +1,17 @@
+{
+  "name": "Михаил Стяжкин — портфолио",
+  "short_name": "Стяжкин",
+  "description": "Портфолио начинающего разработчика Михаила Стяжкина.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffdf6",
+  "theme_color": "#22d3ee",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

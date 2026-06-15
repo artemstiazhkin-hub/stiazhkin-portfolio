@@ -1,0 +1,9 @@
+Options -Indexes
+
+<Files "telegram-config.php">
+  Require all denied
+</Files>
+
+<Files "telegram-config.example.php">
+  Require all denied
+</Files>
