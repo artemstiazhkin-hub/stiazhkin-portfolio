@@ -82,7 +82,7 @@ function tg_call(string $method, array $params): array
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json; charset=utf-8'],
             CURLOPT_POSTFIELDS => $payload,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CONNECTTIMEOUT => 8,
@@ -103,7 +103,7 @@ function tg_call(string $method, array $params): array
     $context = stream_context_create([
         'http' => [
             'method' => 'POST',
-            'header' => "Content-Type: application/json\r\n",
+            'header' => "Content-Type: application/json; charset=utf-8\r\n",
             'content' => $payload,
             'timeout' => 15,
         ],
