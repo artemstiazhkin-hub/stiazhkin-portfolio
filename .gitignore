@@ -18,6 +18,7 @@ local-server.out.log
 assets/*
 !assets/logo-styazhkin.png
 !assets/mikhail-portrait.png
+!assets/og-stiazhkin-portfolio-1200x630.png
 !assets/fonts/
 assets/fonts/*
 !assets/fonts/custom/
