@@ -222,9 +222,11 @@ function send_lead_to_admin(string $chatId, array $from, array $answers): void
         . "Пользователь: " . user_label($from) . "\n"
         . "Telegram ID: " . esc($chatId) . "\n\n"
         . "Имя: " . esc((string)($answers['name'] ?? '')) . "\n"
-        . "Что нужно: " . esc((string)($answers['task'] ?? '')) . "\n"
-        . "Тема/ниша: " . esc((string)($answers['niche'] ?? '')) . "\n"
-        . "Стиль: " . esc((string)($answers['style'] ?? '')) . "\n"
+        . "Услуга: " . esc((string)($answers['service'] ?? '')) . "\n"
+        . "Для кого: " . esc((string)($answers['niche'] ?? '')) . "\n"
+        . "Цель: " . esc((string)($answers['goal'] ?? '')) . "\n"
+        . "Материалы: " . esc((string)($answers['materials'] ?? '')) . "\n"
+        . "Срок: " . esc((string)($answers['deadline'] ?? '')) . "\n"
         . "Контакт: " . esc((string)($answers['contact'] ?? ''));
 
     send_message($adminChatId, $summary);
@@ -235,7 +237,7 @@ if ($text === '' || preg_match('/^\/start/i', $text)) {
     save_state($chatId, ['step' => 'name', 'answers' => []]);
     send_message(
         $chatId,
-        "Привет! Я бот портфолио Миши.\n\nОтветьте на пару коротких вопросов, а взрослый увидит заявку в чате.\n\nКак к вам обращаться?",
+        "Привет! Я бот портфолио Миши.\n\nЗадам несколько коротких вопросов, чтобы было понятно, что нужно сделать. Все ответы увидит взрослый в чате.\n\nКак к вам обращаться?",
         remove_keyboard()
     );
     echo 'OK';
@@ -257,48 +259,78 @@ $answer = clean_text($text);
 switch ($step) {
     case 'name':
         $answers['name'] = $answer;
-        save_state($chatId, ['step' => 'task', 'answers' => $answers]);
+        save_state($chatId, ['step' => 'service', 'answers' => $answers]);
         send_message(
             $chatId,
             'Что нужно сделать?',
             keyboard([
-                ['Личная страница', 'Страница проекта'],
-                ['Лендинг для события', 'Сайт для игры'],
-                ['Другое'],
+                ['Сайт для услуги', 'Личная страница'],
+                ['SEO-страница', 'Креативы для рекламы'],
+                ['Страница для события', 'Доработать сайт'],
+                ['Пока не знаю'],
             ])
         );
         break;
 
-    case 'task':
-        $answers['task'] = $answer;
+    case 'service':
+        $answers['service'] = $answer;
         save_state($chatId, ['step' => 'niche', 'answers' => $answers]);
         send_message(
             $chatId,
-            'Для какой темы или ниши нужен сайт?',
+            'Для кого это нужно?',
             keyboard([
-                ['Учёба / кружок', 'Игры / сервер'],
-                ['Мероприятие', 'Маленький бизнес'],
-                ['Портфолио', 'Другая тема'],
+                ['Локальный бизнес', 'Частный мастер'],
+                ['Обычный человек', 'Школьный проект'],
+                ['Кружок / обучение', 'Событие / праздник'],
+                ['Другое'],
             ])
         );
         break;
 
     case 'niche':
         $answers['niche'] = $answer;
-        save_state($chatId, ['step' => 'style', 'answers' => $answers]);
+        save_state($chatId, ['step' => 'goal', 'answers' => $answers]);
         send_message(
             $chatId,
-            'Какой стиль ближе?',
+            'Какая главная цель?',
             keyboard([
-                ['Ярко и смело', 'Спокойно и чисто'],
-                ['Похоже на комикс', 'Статусно и аккуратно'],
-                ['Пока не знаю'],
+                ['Получать заявки', 'Рассказать об услуге'],
+                ['Чтобы нашли в поиске', 'Показать себя / работы'],
+                ['Сделать рекламу', 'Собрать запись'],
             ])
         );
         break;
 
-    case 'style':
-        $answers['style'] = $answer;
+    case 'goal':
+        $answers['goal'] = $answer;
+        save_state($chatId, ['step' => 'materials', 'answers' => $answers]);
+        send_message(
+            $chatId,
+            'Что уже есть для работы?',
+            keyboard([
+                ['Есть текст и фото', 'Есть только идея'],
+                ['Есть старый сайт', 'Есть референсы'],
+                ['Нужна помощь с текстом', 'Пока ничего нет'],
+            ])
+        );
+        break;
+
+    case 'materials':
+        $answers['materials'] = $answer;
+        save_state($chatId, ['step' => 'deadline', 'answers' => $answers]);
+        send_message(
+            $chatId,
+            'Когда примерно нужно?',
+            keyboard([
+                ['На этой неделе', 'В течение 2 недель'],
+                ['В этом месяце', 'Не срочно'],
+                ['Сначала обсудить'],
+            ])
+        );
+        break;
+
+    case 'deadline':
+        $answers['deadline'] = $answer;
         save_state($chatId, ['step' => 'contact', 'answers' => $answers]);
         send_message(
             $chatId,
