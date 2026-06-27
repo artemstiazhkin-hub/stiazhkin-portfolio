@@ -642,8 +642,14 @@
       background: var(--color-red);
     }
 
+    .hero-decor--thanks div {
+      display: grid;
+      gap: clamp(2px, 0.35vw, 6px);
+    }
+
     .hero-decor--thanks span {
       display: block;
+      line-height: 1.18;
       font-size: clamp(20px, 1.7vw, 30px);
     }
 
@@ -2626,7 +2632,7 @@
 
       .hero-decor--thanks span {
         font-size: clamp(22px, 5.8vw, 26px);
-        line-height: 1.12;
+        line-height: 1.18;
       }
 
       .hero-decor--thanks .hero-decor__heart {
