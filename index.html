@@ -2247,8 +2247,22 @@
 
       .article-feature,
       .contact-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         min-height: 0;
         padding: 18px;
+      }
+
+      .contact-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-panel__title,
+      .contact-panel__text,
+      .contact-panel__button {
+        max-width: 100%;
+        min-width: 0;
       }
 
       .article-card,
@@ -2620,6 +2634,11 @@
         justify-self: end;
         font-size: clamp(42px, 11vw, 52px);
       }
+
+      .contact-panel__button {
+        width: 100%;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -2631,7 +2650,7 @@
       </a>
 
       <nav class="site-nav" aria-label="Основная навигация">
-        <a class="site-nav__link" href="#about">Обо мне</a>
+        <a class="site-nav__link" href="#about">Обо&nbsp;мне</a>
         <a class="site-nav__link" href="#skills">Навыки</a>
         <a class="site-nav__link" href="#projects">Проекты</a>
         <a class="site-nav__link" href="#articles">Подход</a>
@@ -2653,7 +2672,7 @@
             <span>Стяжкин</span>
           </h1>
           <p class="hero__subtitle">Начинающий разработчик, 11 лет</p>
-          <p class="hero__text">Создаю свои первые сайты<br>и интерфейсы</p>
+          <p class="hero__text">Создаю свои первые сайты<br>и&nbsp;интерфейсы</p>
 
           <div class="hero__actions" aria-label="Действия">
             <a class="button button--primary" href="#projects">Посмотреть проекты →</a>
@@ -2691,7 +2710,7 @@
         <span class="hero-decor hero-decor--arrow" aria-hidden="true"></span>
         <div class="hero-decor hero-decor--thanks" aria-hidden="true">
           <div>
-            <span>Спасибо, что зашли!</span>
+            <span>Спасибо, что&nbsp;зашли!</span>
             <span>Буду рад знакомству</span>
           </div>
           <span class="hero-decor__heart">♥</span>
@@ -2747,14 +2766,14 @@
               <span class="benefit-card__icon benefit-card__icon--code" aria-hidden="true">&lt;/&gt;</span>
               <div class="benefit-card__content">
                 <h3 class="benefit-card__title">Пишу код</h3>
-                <p class="benefit-card__text">Чистый и понятный</p>
+                <p class="benefit-card__text">Чистый и&nbsp;понятный</p>
               </div>
             </li>
             <li class="benefit-card">
               <span class="benefit-card__icon benefit-card__icon--design" aria-hidden="true">UI</span>
               <div class="benefit-card__content">
                 <h3 class="benefit-card__title">Создаю дизайн</h3>
-                <p class="benefit-card__text">Делаю красиво и удобно</p>
+                <p class="benefit-card__text">Делаю красиво и&nbsp;удобно</p>
               </div>
             </li>
           </ul>
@@ -2764,10 +2783,10 @@
       <section class="screen projects-screen" id="projects" aria-labelledby="projects-title">
         <div class="screen__header">
           <div>
-            <p class="screen__eyebrow">Что могу сделать</p>
+            <p class="screen__eyebrow">Что&nbsp;могу сделать</p>
             <h2 class="screen__title" id="projects-title">Проекты</h2>
           </div>
-          <p class="screen__lead">Делаю лендинги, сайты-визитки, SEO-страницы и креативы: понятно объяснить услугу, показать пользу и привести человека к заявке.</p>
+          <p class="screen__lead">Делаю лендинги, сайты-визитки, SEO-страницы и&nbsp;креативы: понятно объяснить услугу, показать пользу и&nbsp;привести человека к&nbsp;заявке.</p>
         </div>
 
         <div class="projects-grid">
@@ -2775,8 +2794,8 @@
             <div class="project-card__preview" aria-hidden="true"></div>
             <div>
               <span class="project-card__tag">Лендинг</span>
-              <h3 class="project-card__title">Сайт для услуги</h3>
-              <p class="project-card__text">Для локального бизнеса, мастера или небольшого проекта: что вы делаете, почему вам можно доверять и как оставить заявку.</p>
+              <h3 class="project-card__title">Сайт для&nbsp;услуги</h3>
+              <p class="project-card__text">Для&nbsp;локального бизнеса, мастера или&nbsp;небольшого проекта: что&nbsp;вы делаете, почему вам&nbsp;можно доверять и&nbsp;как&nbsp;оставить заявку.</p>
             </div>
             <a class="project-card__link" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Обсудить →</a>
           </article>
@@ -2786,17 +2805,17 @@
             <div>
               <span class="project-card__tag">SEO</span>
               <h3 class="project-card__title">Страница под поиск</h3>
-              <p class="project-card__text">Для услуги, товара или ниши: нормальная структура, понятные заголовки, ответы на вопросы и аккуратная подача.</p>
+              <p class="project-card__text">Для&nbsp;услуги, товара или&nbsp;ниши: нормальная структура, понятные заголовки, ответы на&nbsp;вопросы и&nbsp;аккуратная подача.</p>
             </div>
-            <a class="project-card__link" href="#articles">Как работаю ↓</a>
+            <a class="project-card__link" href="#articles">Как&nbsp;работаю ↓</a>
           </article>
 
           <article class="project-card">
             <div class="project-card__preview" aria-hidden="true"></div>
             <div>
               <span class="project-card__tag">Креативы</span>
-              <h3 class="project-card__title">Реклама и событие</h3>
-              <p class="project-card__text">Для афиши, запуска, турнира или рекламы: яркий первый экран, короткий смысл и понятный следующий шаг.</p>
+              <h3 class="project-card__title">Реклама и&nbsp;событие</h3>
+              <p class="project-card__text">Для&nbsp;афиши, запуска, турнира или&nbsp;рекламы: яркий первый экран, короткий смысл и&nbsp;понятный следующий шаг.</p>
             </div>
             <a class="project-card__link" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Написать →</a>
           </article>
@@ -2806,10 +2825,10 @@
       <section class="screen articles-screen" id="articles" aria-labelledby="articles-title">
         <div class="screen__header">
           <div>
-            <p class="screen__eyebrow">Как проходит работа</p>
+            <p class="screen__eyebrow">Как&nbsp;проходит работа</p>
             <h2 class="screen__title" id="articles-title">Подход</h2>
           </div>
-          <p class="screen__lead">Беру небольшие и посильные проекты: сайт-визитку, мини-лендинг, страницу услуги, портфолио, событие или рекламный креатив.</p>
+          <p class="screen__lead">Беру небольшие и&nbsp;посильные проекты: сайт-визитку, мини-лендинг, страницу услуги, портфолио, событие или&nbsp;рекламный креатив.</p>
         </div>
 
         <div class="articles-layout">
@@ -2817,7 +2836,7 @@
             <div>
               <span class="article-feature__mark" aria-hidden="true">!</span>
               <h3 class="article-feature__title">Небольшие задачи, настоящие кейсы</h3>
-              <p class="article-feature__text">Я учусь на реальных проектах, поэтому беру понятные задачи без лишней сложности. Взрослый помогает принять задачу, уточнить детали и проверить результат.</p>
+              <p class="article-feature__text">Я&nbsp;учусь на&nbsp;реальных проектах, поэтому беру понятные задачи без&nbsp;лишней сложности. Взрослый помогает принять задачу, уточнить детали и&nbsp;проверить результат.</p>
             </div>
             <a class="button button--secondary" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Предложить идею</a>
           </article>
@@ -2827,7 +2846,7 @@
               <time class="article-card__date" datetime="2026-06">Шаг<br>01</time>
               <div>
                 <h3 class="article-card__title">Понимаем задачу</h3>
-                <p class="article-card__text">Вы пишете, что нужно: лендинг, сайт-визитка, SEO-страница, портфолио, страница события или креатив.</p>
+                <p class="article-card__text">Вы пишете, что&nbsp;нужно: лендинг, сайт-визитка, SEO-страница, портфолио, страница события или&nbsp;креатив.</p>
               </div>
             </article>
 
@@ -2835,15 +2854,15 @@
               <time class="article-card__date" datetime="2026-06">Шаг<br>02</time>
               <div>
                 <h3 class="article-card__title">Собираю страницу</h3>
-                <p class="article-card__text">Делаю понятный первый экран, блоки с пользой, кнопки, контакты и аккуратный вид на телефоне.</p>
+                <p class="article-card__text">Делаю понятный первый экран, блоки с&nbsp;пользой, кнопки, контакты и&nbsp;аккуратный вид на&nbsp;телефоне.</p>
               </div>
             </article>
 
             <article class="article-card">
               <time class="article-card__date" datetime="2026-06">Шаг<br>03</time>
               <div>
-                <h3 class="article-card__title">Что пока не беру</h3>
-                <p class="article-card__text">Интернет-магазины, личные кабинеты, CRM, сложные интеграции и срочные проекты. Сейчас важнее аккуратность.</p>
+                <h3 class="article-card__title">Что пока не&nbsp;беру</h3>
+                <p class="article-card__text">Интернет-магазины, личные кабинеты, CRM, сложные интеграции и&nbsp;срочные проекты. Сейчас важнее аккуратность.</p>
               </div>
             </article>
           </div>
@@ -2856,57 +2875,57 @@
             <p class="screen__eyebrow">Есть идея?</p>
             <h2 class="screen__title" id="contacts-title">Контакты</h2>
           </div>
-          <p class="screen__lead">Если нужен лендинг, сайт-визитка, SEO-страница или креатив для рекламы — можно коротко описать задачу в Telegram.</p>
+          <p class="screen__lead">Если нужен лендинг, сайт-визитка, SEO-страница или&nbsp;креатив для&nbsp;рекламы — можно коротко описать задачу в&nbsp;Telegram.</p>
         </div>
 
         <div class="styles-block" aria-labelledby="styles-title">
           <div class="styles-block__header">
             <div>
               <p class="styles-block__eyebrow">Визуальные направления</p>
-              <h3 class="styles-block__title" id="styles-title">В каких стилях могу попробовать</h3>
+              <h3 class="styles-block__title" id="styles-title">В&nbsp;каких стилях могу попробовать</h3>
             </div>
-            <p class="styles-block__text">Не обещаю «любой дизайн за час», зато могу подобрать понятный стиль под задачу и собрать аккуратный первый вариант страницы.</p>
+            <p class="styles-block__text">Не&nbsp;обещаю «любой дизайн за&nbsp;час», зато могу подобрать понятный стиль под&nbsp;задачу и&nbsp;собрать аккуратный первый вариант страницы.</p>
           </div>
 
           <div class="styles-strip" aria-label="Стили, которые Миша пробует в веб-дизайне">
             <div class="style-chip">
               <span class="style-chip__title">Необрутализм</span>
-              <span class="style-chip__text">Ярко, смело, с толстыми рамками и жёсткими тенями.</span>
+              <span class="style-chip__text">Ярко, смело, с&nbsp;толстыми рамками и&nbsp;жёсткими тенями.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Минимализм</span>
-              <span class="style-chip__text">Когда нужно спокойно показать главное без лишнего шума.</span>
+              <span class="style-chip__text">Когда нужно спокойно показать главное без&nbsp;лишнего шума.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Неоклассика</span>
-              <span class="style-chip__text">Статус и доверие остаются, а визуальная тяжесть уходит.</span>
+              <span class="style-chip__text">Статус и&nbsp;доверие остаются, а&nbsp;визуальная тяжесть уходит.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Бенто</span>
-              <span class="style-chip__text">Карточки, сетка и понятные блоки для разных смыслов.</span>
+              <span class="style-chip__text">Карточки, сетка и&nbsp;понятные блоки для&nbsp;разных смыслов.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Flat</span>
-              <span class="style-chip__text">Плоские формы, простые иконки и страница, где сразу понятно, куда нажать.</span>
+              <span class="style-chip__text">Плоские формы, простые иконки и&nbsp;страница, где сразу понятно, куда нажать.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Рисованный</span>
-              <span class="style-chip__text">Больше характера, иллюстраций и живого настроения.</span>
+              <span class="style-chip__text">Больше характера, иллюстраций и&nbsp;живого настроения.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Hi-tech</span>
-              <span class="style-chip__text">Технологичный вид для IT, игр и цифровых проектов.</span>
+              <span class="style-chip__text">Технологичный вид для&nbsp;IT, игр и&nbsp;цифровых проектов.</span>
             </div>
 
             <div class="style-chip">
               <span class="style-chip__title">Фестивальный</span>
-              <span class="style-chip__text">Постерный стиль для событий, турниров и ярких запусков.</span>
+              <span class="style-chip__text">Постерный стиль для&nbsp;событий, турниров и&nbsp;ярких запусков.</span>
             </div>
           </div>
         </div>
@@ -2916,8 +2935,8 @@
             <article class="contact-card">
               <span class="contact-card__icon" aria-hidden="true">TG</span>
               <div>
-                <h3 class="contact-card__title">Написать в Telegram</h3>
-                <p class="contact-card__text">Ответьте на пару вопросов, и мы поймём, какой сайт или креатив нужен.</p>
+                <h3 class="contact-card__title">Написать в&nbsp;Telegram</h3>
+                <p class="contact-card__text">Ответьте на&nbsp;пару вопросов, и&nbsp;мы&nbsp;поймём, какой сайт или&nbsp;креатив нужен.</p>
               </div>
             </article>
 
@@ -2925,7 +2944,7 @@
               <span class="contact-card__icon" aria-hidden="true">#</span>
               <div>
                 <h3 class="contact-card__title">Ниши</h3>
-                <p class="contact-card__text">Локальный бизнес, частные мастера, обучение, события, личные страницы и небольшие проекты.</p>
+                <p class="contact-card__text">Локальный бизнес, частные мастера, обучение, события, личные страницы и&nbsp;небольшие проекты.</p>
               </div>
             </article>
 
@@ -2933,17 +2952,17 @@
               <span class="contact-card__icon" aria-hidden="true">?</span>
               <div>
                 <h3 class="contact-card__title">Стиль</h3>
-                <p class="contact-card__text">Подбираю направление под задачу: от чистого минимализма до яркого необрутализма.</p>
+                <p class="contact-card__text">Подбираю направление под&nbsp;задачу: от&nbsp;чистого минимализма до&nbsp;яркого необрутализма.</p>
               </div>
             </article>
           </div>
 
           <div class="contact-panel">
             <div>
-              <h3 class="contact-panel__title">Сайт без лишней воды</h3>
-              <p class="contact-panel__text">Миша делает небольшие страницы и собирает первые кейсы. Взрослый рядом: помогает обсудить задачу, сроки и правки.</p>
+              <h3 class="contact-panel__title">Сайт без&nbsp;лишней воды</h3>
+              <p class="contact-panel__text">Миша делает небольшие страницы и&nbsp;собирает первые кейсы. Взрослый рядом: помогает обсудить задачу, сроки и&nbsp;правки.</p>
             </div>
-            <a class="button contact-panel__button" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Обсудить в Telegram ↑</a>
+            <a class="button contact-panel__button" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Обсудить в&nbsp;Telegram ↑</a>
           </div>
         </div>
       </section>
@@ -2954,18 +2973,18 @@
         <a class="site-footer__logo" href="#about" aria-label="Стяжкин">
           <img src="assets/logo-styazhkin.png" alt="Стяжкин">
         </a>
-        <p class="site-footer__text">Первые сайты, аккуратные страницы и яркая подача для проектов, учёбы и маленьких запусков.</p>
+        <p class="site-footer__text">Первые сайты, аккуратные страницы и&nbsp;яркая подача для&nbsp;проектов, учёбы и&nbsp;маленьких запусков.</p>
       </div>
 
       <nav class="site-footer__nav" aria-label="Навигация в подвале">
-        <a href="#about">Обо мне</a>
+        <a href="#about">Обо&nbsp;мне</a>
         <a href="#skills">Навыки</a>
         <a href="#projects">Проекты</a>
         <a href="#articles">Подход</a>
         <a href="#contacts">Контакты</a>
       </nav>
 
-      <a class="site-footer__contact" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Написать в Telegram ↑</a>
+      <a class="site-footer__contact" href="https://t.me/styazhkin_portfolio_bot" target="_blank" rel="noopener">Написать в&nbsp;Telegram ↑</a>
     </footer>
   </div>
 </body>
